@@ -3,6 +3,9 @@
 /****************************************************************************************/
 
 
+/* NOTE  ********************************************************************************/
+/* Variables are set inside '.\config\' folders CSS files, if complete package is used! */
+
 :root {
   --classic_squared_tabs_tab_height: 26px;
   --classic_squared_tabs_tab_default_loading_icon_color: #0A84FF;
@@ -217,7 +220,7 @@
 }
 
 /* size of new tab tabs '+' icon */
-.tabs-newtab-button .toolbarbutton-icon{
+#TabsToolbar .tabs-newtab-button .toolbarbutton-icon{
   min-width: 0px !important;
   min-height: 0px !important;
   width: 14px !important;
@@ -236,7 +239,7 @@
 }
 
 .tabbrowser-tab:not([pinned]) .tab-content  .close-icon,
-:root[uidensity=touch]  .tabbrowser-tab:not([pinned]) .tab-content .close-icon {
+:root[uidensity=touch] .tabbrowser-tab:not([pinned]) .tab-content .close-icon {
   width: 16px !important;
   height: 16px !important;
   -moz-margin-end: -6px !important;
@@ -290,7 +293,7 @@
   box-shadow: unset !important;
 }
 
-/* hide tab separators */
+/* hide tab separators and borders set by Firefox */
 .tabbrowser-tab::after,
 .tabbrowser-tab::before {
   opacity: 0 !important;
@@ -298,19 +301,12 @@
   border-image-slice: unset !important;
   width: unset !important;
 }
+
 #tabbrowser-tabs[movingtab] > .tabbrowser-tab[beforeselected]:not([last-visible-tab])::after,
 .tabbrowser-tab:not([selected]):not([afterselected-visible]):not([afterhovered]):not([first-visible-tab]):not(:hover)::before,
 #tabbrowser-tabs:not([overflow]) > .tabbrowser-tab[last-visible-tab]:not([selected]):not([beforehovered]):not(:hover)::after {
   content: unset !important;
   display: unset !important;
-}
-/**/
-
-/* remove crap set by Firefox 58+ */
-.tabbrowser-tab,
-.tab-stack,
-.tab-background {
-  border: unset !important;
 }
 
 .tabbrowser-tab::after,
@@ -333,6 +329,13 @@
   border-top-right-radius: 3px !important;
 }
 
+.tabbrowser-tab,
+.tab-stack,
+.tab-background {
+  border: unset !important;
+}
+
+/* remove titlebar placerholders */
 #TabsToolbar .titlebar-placeholder[type="pre-tabs"],
 #TabsToolbar .titlebar-placeholder[type="post-tabs"]{
   opacity: 0 !important;
@@ -385,4 +388,20 @@
 /* remove non-required icon pending */
 .tab-icon-pending {
   display: none !important;
+}
+
+/* Fx65+ fixes */
+#main-window[sizemode="maximized"][tabsintitlebar] #TabsToolbar {
+  margin-top: -1px !important;
+}
+
+#main-window #navigator-toolbox #titlebar #TabsToolbar > .toolbar-items {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+@media (-moz-os-version: windows-win10) {
+  #main-window[sizemode="maximized"] .titlebar-buttonbox-container {
+	-moz-margin-end: -2px !important;
+  }
 }

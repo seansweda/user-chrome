@@ -1,6 +1,5 @@
 /*
- https://www.jeffersonscher.com/gm/search-bar-names.html
- HELLO! This script has optional settings that you can try out if you return to its page: https://userstyles.org/styles/122214/firefox-search-bar-show-engine-names-firefox-43
+  HELLO! This script has optional settings that you can try out if you return to its page: https://userstyles.org/styles/122214/firefox-search-bar-show-engine-names-firefox-43
 */
 @-moz-document url(chrome://browser/content/browser.xul) {
   /* Make the one-off buttons span the full width */
@@ -84,6 +83,16 @@
     /* Not hiding "Add ..." engine */
     /* Not hiding "Change Search Settings" */
     /* Search bar tooltip text only visible on mouseover */
-    /* No color scheme */
+    /* For light theme */
+  #PopupSearchAutoComplete .search-panel-one-offs:not(:hover):not([selected]), 
+  #PopupSearchAutoComplete .searchbar-engine-one-off-item:not(:hover):not([selected]) {
+    color: #111 !important;
+    background-color: #fafafa !important;
+  }
+  #PopupSearchAutoComplete .search-panel-header, 
+  #PopupSearchAutoComplete .search-panel-input-value, 
+  #PopupSearchAutoComplete .addengine-item {
+    color: #111 !important;
+  }
     /* No color scheme for hover */
 }

@@ -2,17 +2,22 @@
 /* https://www.jeffersonscher.com/gm/search-bar-names.html */
 @import url("search-bar-names.css");
 
-/* https://github.com/Aris-t2/CustomCSSforFx */
+/* https://github.com/Aris-t2/CustomCSSforFx 2.5.7 [afae78b] */
 @import url("general_variables.css");
 @import url("color_variables.css");
 @import url("classic_squared_tabs.css");
+/* @import url("classic_squared_tabs_fully_squared.css"); */
 @import url("tab_close_always_visible.css");
-@import url("tabs_below_navigation_toolbar.css");
-@import url("tabs_below_navigation_toolbar_macOS_fix.css");
-
+@import url("tab_icon_colors.css");
+@import url("tabs_below_navigation_toolbar_fx65_macOS.css");
 @import url("addonbar_move_bookmarks_toolbar_to_bottom.css");
 @import url("addonbar_status_in_addonbar.css");
 @import url("addonbar_content_on_the_right.css");
+
+/* override tabs_below_navigation_toolbar_fx65_macOS.css */
+#main-window:not([chromehidden*="toolbar"]) #navigator-toolbox {
+  padding-bottom: calc(1px + var(--tab-min-height_tnot)) !important;
+}
 
 /* override button icon */
 #undo-close-tab-buttons-single_codefisher_org-browser-action{ list-style-image:  url("./icons/undo32.png") !important; }

@@ -2,10 +2,10 @@
 /* Github: https://github.com/aris-t2/customcssforfx ************************************/
 /****************************************************************************************/
 
-
-#main-window[tabsintitlebar][sizemode="normal"] #toolbar-menubar {
-  margin-top: 24px !important;
+.tabbrowser-tab .tab-icon-image[src="chrome://mozapps/skin/extensions/extensionGeneric-16.svg"]{
+  fill: green !important;
 }
-#main-window[tabsintitlebar][sizemode="maximized"] #toolbar-menubar {
-  margin-top: 24px !important;
+
+.tabbrowser-tab .tab-icon-image[src="chrome://browser/skin/settings.svg"]{
+  fill: gray !important;
 }
